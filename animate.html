@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animation Showcase</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- AnimeJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(33, 33, 33, 0.95) !important;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+        }
+
+        .logo img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: #ff7f50 !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ff7f50;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Hero Section - Updated to match theme */
+        .hero {
+            background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+            color: #333;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons .btn {
+            background-color: #795548;
+            color: #f8ede3;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons .btn:hover {
+            background-color: #5d4037;
+            transform: translateY(-2px);
+        }
+
+        /* Animation Gallery Section */
+        .animation-gallery {
+            background: #f8ede3;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #deb6a1, #efc6b7);
+            bottom: -10px;
+            left: 25%;
+        }
+
+        /* Animation Cards */
+        .animation-row {
+            margin-top: 40px;
+        }
+
+        .animation-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            height: 200px;
+            position: relative;
+        }
+
+        .animation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: #efc6b7;
+            padding: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .animation-stage {
+            height: calc(100% - 53px);
+            position: relative;
+            background: #deb6a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .animation-element {
+            width: 40px;
+            height: 40px;
+            background-color: #795548;
+            border-radius: 5px;
+        }
+
+        /* Text Effects */
+        .text-animation-container {
+            background: #efc6b7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-text {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #5d4037;
+        }
+
+        .animated-text span {
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .skill-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+            color: #5d4037;
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #795548;
+        }
+
+        .skill-item:hover i {
+            color: #5d4037;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+            color: #333;
+            padding: 80px 0;
+        }
+
+        .contact .section-title:after {
+            background: #5d4037;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(121, 85, 72, 0.2);
+            color: #5d4037;
+            margin: 0 15px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #795548;
+            color: #f8ede3;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Music Button */
+        .music-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #795548;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .music-button:hover {
+            transform: scale(1.1);
+        }
+
+        .music-button.playing {
+            background: #a1887f;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .col-md-2-4 {
+                width: 33.33%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .col-md-2-4 {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .col-md-2-4 {
+                width: 100%;
+            }
+
+            .animation-card {
+                height: 180px;
+            }
+        }
+
+        /* Custom column width for 5 columns */
+        .col-md-2-4 {
+            width: 20%;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="audio/menu.ogg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-btn" class="music-button">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/valorant-logo-play-2-svgrepo-com.svg" alt="Valorant Logo">
+            </div>
+            <a class="navbar-brand fw-bold" href="#">ZSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="fw-bold">Animation Showcase</h1>
+            <p id="typing-text" class="lead mt-3 mx-auto">Experience the power of creative web animations</p>
+            <div class="hero-buttons mt-4">
+                <a href="#gallery" class="btn btn-lg">Explore Animations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Gallery Section -->
+    <section id="gallery" class="animation-gallery">
+        <div class="container py-5 text-center">
+            <h2 class="section-title">Animation Showcase</h2>
+
+            <p class="mb-5">Explore our collection of animations showcasing different effects and techniques!</p>
+
+            <!-- First Row of Animation Cards (5 columns) -->
+            <div class="row animation-row">
+                <!-- Fade Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Fade Animation
+                        </div>
+                        <div class="animation-stage" id="fade-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scale Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Scale Animation
+                        </div>
+                        <div class="animation-stage" id="scale-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rotate Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Rotate Animation
+                        </div>
+                        <div class="animation-stage" id="rotate-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Path Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Path Animation
+                        </div>
+                        <div class="animation-stage" id="path-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elastic Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Elastic Animation
+                        </div>
+                        <div class="animation-stage" id="elastic-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row of Animation Cards (5 columns) -->
+            <div class="row animation-row">
+                <!-- Color Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Color Animation
+                        </div>
+                        <div class="animation-stage" id="color-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bounce Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Bounce Animation
+                        </div>
+                        <div class="animation-stage" id="bounce-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Flip Animation
+                        </div>
+                        <div class="animation-stage" id="flip-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulse Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Pulse Animation
+                        </div>
+                        <div class="animation-stage" id="pulse-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shake Animation -->
+                <div class="col-md-2-4">
+                    <div class="animation-card">
+                        <div class="card-header">
+                            Shake Animation
+                        </div>
+                        <div class="animation-stage" id="shake-animation">
+                            <div class="animation-element"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Animation -->
+            <div class="text-animation-container">
+                <h3 class="animated-text" id="animated-text">Animation Magic</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">About Our Animations</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="about-text">
+                        Our animation showcase demonstrates the creative possibilities of modern web animation
+                        techniques.
+                        We blend artistic design with technical expertise to create engaging, interactive experiences
+                        that
+                        captivate users and bring websites to life. From simple transitions to complex character
+                        animations,
+                        we're passionate about pushing the boundaries of what's possible on the web.
+                    </p>
+                    <div class="skills mt-5">
+                        <h3 class="mb-4">Animation Skills</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-film"></i>
+                                    <p>Motion Design</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-code"></i>
+                                    <p>JavaScript Animation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-magic"></i>
+                                    <p>Creative Effects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info mb-5">
+                        <p>Interested in custom animations for your project? Let's collaborate!</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        &copy; 2025 Zhidan Iannov Saaba. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("bg-music");
+            const musicButton = document.getElementById("music-btn");
+
+            // Typing animation for hero text
+            const textElement = document.getElementById("typing-text");
+            const textContent = textElement.textContent;
+            textElement.textContent = "";
+            let i = 0;
+
+            function typeWriter() {
+                if (i < textContent.length) {
+                    textElement.textContent += textContent.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+
+            // Start typing animation after a short delay
+            setTimeout(typeWriter, 500);
+
+            // Background Music Control
+            musicButton.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play();
+                    musicButton.classList.add("playing");
+                    musicButton.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    audio.pause();
+                    musicButton.classList.remove("playing");
+                    musicButton.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+
+            // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+            // Smooth Scroll 
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        event.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        window.scrollTo({
+                            top: target.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // BASIC ANIMATIONS
+
+            // Fade Animation
+            anime({
+                targets: '#fade-animation .animation-element',
+                opacity: [1, 0.2, 1],
+                duration: 2000,
+                loop: true,
+                easing: 'easeInOutSine',
+                autoplay: true
+            });
+
+            // Scale Animation
+            anime({
+                targets: '#scale-animation .animation-element',
+                scale: [1, 1.5, 0.8, 1],
+                duration: 2500,
+                loop: true,
+                easing: 'easeInOutExpo',
+                autoplay: true
+            });
+
+            // Rotate Animation
+            anime({
+                targets: '#rotate-animation .animation-element',
+                rotate: '1turn',
+                duration: 2000,
+                loop: true,
+                easing: 'easeInOutQuad',
+                autoplay: true
+            });
+
+            // Path Animation
+            anime({
+                targets: '#path-animation .animation-element',
+                keyframes: [
+                    { translateX: 60, translateY: -30, duration: 1000 },
+                    { translateX: 0, translateY: 30, duration: 1000 },
+                    { translateX: -60, translateY: -30, duration: 1000 },
+                    { translateX: 0, translateY: 0, duration: 1000 }
+                ],
+                easing: 'easeOutElastic(1, .6)',
+                loop: true,
+                autoplay: true
+            });
+
+            // Elastic Animation
+            anime({
+                targets: '#elastic-animation .animation-element',
+                translateX: [
+                    { value: 60, duration: 1000, elasticity: 600 },
+                    { value: -60, duration: 1000, elasticity: 600 },
+                    { value: 0, duration: 1000, elasticity: 600 }
+                ],
+                scaleX: [
+                    { value: 1.5, duration: 1000, delay: 0 },
+                    { value: 0.75, duration: 1000, delay: 1000 },
+                    { value: 1, duration: 1000, delay: 2000 }
+                ],
+                loop: true,
+                autoplay: true
+            });
+
+            // Color Animation
+            anime({
+                targets: '#color-animation .animation-element',
+                backgroundColor: [
+                    '#795548',
+                    '#deb6a1',
+                    '#a1887f',
+                    '#8d6e63',
+                    '#795548'
+                ],
+                duration: 4000,
+                easing: 'easeInOutQuad',
+                loop: true,
+                autoplay: true
+            });
+
+            // Bounce Animation
+            anime({
+                targets: '#bounce-animation .animation-element',
+                translateY: [
+                    { value: -40, duration: 500, easing: 'easeOutQuad' },
+                    { value: 0, duration: 800, easing: 'easeInOutElastic(1, .5)' }
+                ],
+                loop: true,
+                autoplay: true
+            });
+
+            // Flip Animation
+            anime({
+                targets: '#flip-animation .animation-element',
+                rotateY: [
+                    { value: '0deg', duration: 0 },
+                    { value: '180deg', duration: 1500 },
+                    { value: '360deg', duration: 1500 }
+                ],
+                easing: 'easeInOutSine',
+                loop: true,
+                autoplay: true
+            });
+
+            // Pulse Animation
+            anime({
+                targets: '#pulse-animation .animation-element',
+                scale: [
+                    { value: 1, duration: 0, delay: 0 },
+                    { value: 1.2, duration: 500, delay: 0 },
+                    { value: 1, duration: 500, delay: 0 },
+                    { value: 1.2, duration: 500, delay: 500 },
+                    { value: 1, duration: 500, delay: 0 }
+                ],
+                easing: 'easeInOutQuad',
+                loop: true,
+                autoplay: true
+            });
+
+            // Shake Animation
+            anime({
+                targets: '#shake-animation .animation-element',
+                translateX: [
+                    { value: -10, duration: 100, delay: 0 },
+                    { value: 10, duration: 100, delay: 0 },
+                    { value: -10, duration: 100, delay: 0 },
+                    { value: 10, duration: 100, delay: 0 },
+                    { value: -10, duration: 100, delay: 0 },
+                    { value: 10, duration: 100, delay: 0 },
+                    { value: -10, duration: 100, delay: 0 },
+                    { value: 0, duration: 100, delay: 0 }
+                ],
+                loop: true,
+                delay: 2000,
+                autoplay: true
+            });
+
+            // TEXT ANIMATION
+            // Split text into characters for animation
+            const text = document.querySelector('#animated-text');
+            text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+            // Animate each character
+            anime({
+                targets: '#animated-text span',
+                translateY: [-20, 0],
+                opacity: [0, 1],
+                easing: 'easeOutExpo',
+                duration: 1500,
+                delay: (el, i) => 80 * i,
+                loop: true,
+                direction: 'alternate',
+                autoplay: true
+            });
+        });
+    </script>
+</body>
+
+</html>

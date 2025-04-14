@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/audio.css">
+
+</head>
+
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="audio/menu.ogg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button id="music-btn" class="music-button">
+        <i class="fas fa-play"></i>
+    </button>        
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/valorant-logo-play-2-svgrepo-com.svg" alt="Valorant Logo">
+            </div>
+            <a class="navbar-brand fw-bold" href="#">ZSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+            <h1 class="mt-3 fw-bold">Audio Collection</h1>
+            <p id="typing-text" class="lead mt-3">Explore our collection of music in various formats</p>
+            <div class="hero-buttons mt-4">
+                <a href="#gallery" class="btn btn-primary btn-lg">Explore Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Gallery Section -->
+    <section id="gallery" class="audio-gallery">
+        <div class="container py-5">
+            <h2 class="section-title mb-5">Audio Gallery</h2>
+            <div class="row row-cols-5 audio-container-row">
+                <!-- Audio Card 1 - MP3 -->
+                <div class="col first-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Summer Breeze</h5>
+                            <div class="audio-format">MP3 Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="images/valjett.jpg" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/menu.ogg" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Summer Breeze</h5>
+                            <p><strong>Artist:</strong> Coastal Dreams</p>
+                            <p><strong>Producer:</strong> Alex Thompson</p>
+                            <p><strong>Genre:</strong> Ambient</p>
+                            <p><strong>Release Date:</strong> June 15, 2024</p>
+                            <div class="audio-description">
+                                <p>A relaxing ambient track featuring ocean waves and soft synthesizers. Perfect background music for meditation and relaxation sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Card 2 - WAV -->
+                <div class="col first-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Digital Symphony</h5>
+                            <div class="audio-format">WAV Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Digital Symphony</h5>
+                            <p><strong>Artist:</strong> Electronic Masters</p>
+                            <p><strong>Producer:</strong> Maria Garcia</p>
+                            <p><strong>Genre:</strong> Electronic</p>
+                            <p><strong>Release Date:</strong> February 28, 2024</p>
+                            <div class="audio-description">
+                                <p>A high-fidelity orchestral piece combining traditional instruments with electronic elements. Recorded in lossless WAV format to preserve audio quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Card 3 - AAC -->
+                <div class="col first-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Urban Beats</h5>
+                            <div class="audio-format">AAC Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.aac" type="audio/aac">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Urban Beats</h5>
+                            <p><strong>Artist:</strong> DJ Rhythm</p>
+                            <p><strong>Producer:</strong> West Coast Productions</p>
+                            <p><strong>Genre:</strong> Hip Hop</p>
+                            <p><strong>Release Date:</strong> March 10, 2025</p>
+                            <div class="audio-description">
+                                <p>A contemporary hip-hop track with powerful bass lines and urban rhythms. This AAC format file offers excellent compression while maintaining audio quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Card 4 - FLAC -->
+                <div class="col first-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Classical Moments</h5>
+                            <div class="audio-format">FLAC Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.flac" type="audio/flac">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Classical Moments</h5>
+                            <p><strong>Artist:</strong> Vienna Philharmonic</p>
+                            <p><strong>Producer:</strong> Classical Records Ltd.</p>
+                            <p><strong>Genre:</strong> Classical</p>
+                            <p><strong>Release Date:</strong> October 5, 2024</p>
+                            <div class="audio-description">
+                                <p>A masterful rendition of Mozart's Symphony No.40. This lossless FLAC recording preserves the full dynamic range and subtle nuances of the live performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Card 5 - OGG -->
+                <div class="col first-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Folk Revival</h5>
+                            <div class="audio-format">OGG Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.ogg" type="audio/ogg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Folk Revival</h5>
+                            <p><strong>Artist:</strong> The Wanderers</p>
+                            <p><strong>Producer:</strong> Sarah Johnson</p>
+                            <p><strong>Genre:</strong> Folk</p>
+                            <p><strong>Release Date:</strong> August 17, 2024</p>
+                            <div class="audio-description">
+                                <p>An acoustic folk ballad featuring guitar, fiddle, and harmonica. Released in the open-source OGG Vorbis format for high quality at smaller file sizes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Card 6 - M4A -->
+                <div class="col second-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Jazz Ensemble</h5>
+                            <div class="audio-format">M4A Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.m4a" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Jazz Ensemble</h5>
+                            <p><strong>Artist:</strong> Blue Note Quartet</p>
+                            <p><strong>Producer:</strong> James Wilson</p>
+                            <p><strong>Genre:</strong> Jazz</p>
+                            <p><strong>Release Date:</strong> January 12, 2025</p>
+                            <div class="audio-description">
+                                <p>A smooth jazz performance recorded live at The Blue Room. Features extended saxophone and piano solos with tight rhythm section backing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Card 6 - M4A -->
+                <div class="col second-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Jazz Ensemble</h5>
+                            <div class="audio-format">M4A Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.m4a" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Jazz Ensemble</h5>
+                            <p><strong>Artist:</strong> Blue Note Quartet</p>
+                            <p><strong>Producer:</strong> James Wilson</p>
+                            <p><strong>Genre:</strong> Jazz</p>
+                            <p><strong>Release Date:</strong> January 12, 2025</p>
+                            <div class="audio-description">
+                                <p>A smooth jazz performance recorded live at The Blue Room. Features extended saxophone and piano solos with tight rhythm section backing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Card 6 - M4A -->
+                <div class="col second-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Jazz Ensemble</h5>
+                            <div class="audio-format">M4A Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.m4a" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Jazz Ensemble</h5>
+                            <p><strong>Artist:</strong> Blue Note Quartet</p>
+                            <p><strong>Producer:</strong> James Wilson</p>
+                            <p><strong>Genre:</strong> Jazz</p>
+                            <p><strong>Release Date:</strong> January 12, 2025</p>
+                            <div class="audio-description">
+                                <p>A smooth jazz performance recorded live at The Blue Room. Features extended saxophone and piano solos with tight rhythm section backing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Card 6 - M4A -->
+                <div class="col second-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Jazz Ensemble</h5>
+                            <div class="audio-format">M4A Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.m4a" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Jazz Ensemble</h5>
+                            <p><strong>Artist:</strong> Blue Note Quartet</p>
+                            <p><strong>Producer:</strong> James Wilson</p>
+                            <p><strong>Genre:</strong> Jazz</p>
+                            <p><strong>Release Date:</strong> January 12, 2025</p>
+                            <div class="audio-description">
+                                <p>A smooth jazz performance recorded live at The Blue Room. Features extended saxophone and piano solos with tight rhythm section backing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Card 6 - M4A -->
+                <div class="col second-row">
+                    <div class="audio-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Jazz Ensemble</h5>
+                            <div class="audio-format">M4A Format</div>
+                        </div>
+                        <div class="audio-player">
+                            <img class="audio-artwork" src="/api/placeholder/120/120" alt="Album Cover">
+                            <div class="custom-audio-player">
+                                <div class="custom-audio-controls">
+                                    <button class="play-pause-btn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <audio class="d-none">
+                                    <source src="audio/sample.m4a" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="audio-details">
+                            <h5>Jazz Ensemble</h5>
+                            <p><strong>Artist:</strong> Blue Note Quartet</p>
+                            <p><strong>Producer:</strong> James Wilson</p>
+                            <p><strong>Genre:</strong> Jazz</p>
+                            <p><strong>Release Date:</strong> January 12, 2025</p>
+                            <div class="audio-description">
+                                <p>A smooth jazz performance recorded live at The Blue Room. Features extended saxophone and piano solos with tight rhythm section backing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">About Audio Gallery</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="about-text">
+                        Our audio gallery showcases a diverse range of audio formats and production styles. From compressed formats 
+                        like MP3 and AAC to high-fidelity lossless options such as FLAC and WAV, we're dedicated to demonstrating 
+                        the nuances and characteristics of each format. Every recording in our collection is carefully selected to 
+                        highlight the strengths of its respective format.
+                    </p>
+                    <div class="skills mt-5">
+                        <h3 class="mb-4">Audio Expertise</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-music"></i>
+                                    <p>Audio Mastering</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-microphone"></i>
+                                    <p>Sound Recording</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-sliders"></i>
+                                    <p>Audio Production</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact and Footer sections remain unchanged -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info mb-5">
+                        <p>Feel free to reach out for collaborations or inquiries about audio production</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        &copy; 2025 Zhidan Iannov Saaba. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script/audio.js"></script>
+</body>
+
+</html>

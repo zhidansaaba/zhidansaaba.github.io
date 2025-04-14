@@ -1,0 +1,269 @@
+/* Audio Gallery Specific Styles */
+.audio-gallery {
+    background: #f8ede3;
+    padding: 40px 0;
+}
+
+.row-cols-5>* {
+    flex: 0 0 auto;
+    width: 20%;
+    transition: width 0.5s ease;
+    padding: 0 10px;
+}
+
+/* Audio Card Styling */
+.audio-card {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #efc6b7;
+    height: 300px;
+    /* Fixed height */
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #efc6b7;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.audio-format {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.audio-player {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 70px);
+    /* Subtract header height */
+    background-color: #deb6a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Modified Audio Player Styling - Simplified controls */
+.custom-audio-player {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.custom-audio-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.play-pause-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #f8ede3;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+
+/* Modified Audio Artwork - Square instead of circular */
+.audio-artwork {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    /* Slightly rounded corners instead of circular */
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.audio-card:hover .audio-artwork {
+    transform: scale(1.05);
+}
+
+/* Expanded state - MODIFIED FOR HORIZONTAL EXPANSION ONLY */
+.row-cols-5>.expanded {
+    width: 40%;
+    /* Double width when expanded */
+    z-index: 10;
+}
+
+/* Shrink effect for first row cards only when a first row card is hovered */
+.row-cols-5>.first-row.shrink-first-row {
+    width: 15%;
+    opacity: 0.7;
+}
+
+/* Shrink effect for second row cards only when a second row card is hovered */
+.row-cols-5>.second-row.shrink-second-row {
+    width: 15%;
+    opacity: 0.7;
+}
+
+/* Split view in expanded state */
+.audio-card.expanded {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    /* Keep the same height */
+}
+
+.audio-card.expanded .card-header {
+    display: none;
+}
+
+.audio-card.expanded .audio-player {
+    width: 50%;
+    height: 100%;
+}
+
+/* Hide scrollbar but keep functionality */
+.audio-details {
+    display: none;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    background-color: #deb6a1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.audio-details::-webkit-scrollbar {
+    display: none;
+}
+
+.audio-card.expanded .audio-details {
+    display: block;
+}
+
+.audio-details h5 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.audio-details p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.audio-description {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    padding-bottom: 10px;
+    /* Add padding at bottom for scrolling content */
+}
+
+/* Responsive adjustments for audio gallery */
+@media (max-width: 1200px) {
+    .row-cols-5>* {
+        width: 25%;
+    }
+
+    .row-cols-5>.expanded {
+        width: 50%;
+    }
+
+    .row-cols-5>.first-row.shrink-first-row,
+    .row-cols-5>.second-row.shrink-second-row {
+        width: 16.66%;
+    }
+}
+
+@media (max-width: 992px) {
+    .row-cols-5>* {
+        width: 33.33%;
+    }
+
+    .row-cols-5>.expanded {
+        width: 60%;
+    }
+
+    .row-cols-5>.first-row.shrink-first-row,
+    .row-cols-5>.second-row.shrink-second-row {
+        width: 20%;
+    }
+
+    /* Keep horizontal layout even on smaller screens */
+    .audio-card.expanded {
+        flex-direction: row;
+        height: 300px;
+    }
+
+    .audio-card.expanded .audio-player,
+    .audio-card.expanded .audio-details {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-cols-5>* {
+        width: 50%;
+    }
+
+    .row-cols-5>.expanded {
+        width: 100%;
+    }
+
+    .row-cols-5>.first-row.shrink-first-row,
+    .row-cols-5>.second-row.shrink-second-row {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 576px) {
+    .row-cols-5>* {
+        width: 100%;
+    }
+
+    .audio-card.expanded {
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .audio-card.expanded .audio-player,
+    .audio-card.expanded .audio-details {
+        width: 100%;
+        height: 50%;
+    }
+}

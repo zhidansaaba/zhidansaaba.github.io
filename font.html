@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Font Showcase</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/font.css">
+</head>
+
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="/api/placeholder/400/320" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-btn" class="music-button">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/valorant-logo-play-2-svgrepo-com.svg" alt="Font Logo">
+            </div>
+            <a class="navbar-brand fw-bold" href="#">Font Showcase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Font Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pairings">Font Pairings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="fw-bold">Typography in Motion</h1>
+            <p id="typing-text" class="lead mt-3 mx-auto">Discover the beauty of fonts and text animations</p>
+            <div class="hero-buttons mt-4">
+                <a href="#gallery" class="btn btn-lg">Explore Fonts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Gallery Section -->
+    <section id="gallery" class="font-gallery">
+        <div class="container py-5 text-center">
+            <h2 class="section-title">Font Showcase</h2>
+
+            <p class="mb-5">Explore our collection of beautiful fonts!</p>
+
+            <!-- First Row of Font Cards (5 columns) -->
+            <div class="row font-row">
+                <!-- Montserrat Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Montserrat
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-montserrat">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A geometric sans-serif typeface with clean lines and modern feel. Perfect for headlines and
+                            UI elements.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playfair Display Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Playfair Display
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-playfair">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            An elegant serif font with dramatic thick/thin transitions. Ideal for headings and editorial
+                            design.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roboto Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Roboto
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-roboto">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A neo-grotesque sans-serif with natural reading rhythm. Android's system font, excellent for
+                            interfaces and body text.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lora Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Lora
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-lora">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A well-balanced contemporary serif with moderate contrast. Perfect for body text in both
+                            print and digital formats.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poppins Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Poppins
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-poppins">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A geometric sans-serif with friendly curves. Versatile for headings and body text with
+                            excellent readability.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row of Font Cards (5 columns) -->
+            <div class="row font-row">
+                <!-- Merriweather Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Merriweather
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-merriweather">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A traditional serif designed for on-screen reading with strong serifs and open forms. Great
+                            for long-form text.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abril Fatface Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Abril Fatface
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-abril">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A display font with strong presence and contrast. Inspired by advertising typefaces from the
+                            19th century.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bebas Neue Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Bebas Neue
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-bebas">TYPOGRAPHY</div>
+                        </div>
+                        <div class="font-description">
+                            A condensed sans-serif with uppercase-only characters. Perfect for impactful headlines and
+                            posters.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dancing Script Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Dancing Script
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-dancing">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A lively casual script with bouncing baseline. Adds warmth and personality to designs like
+                            invitations and greeting cards.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacifico Font -->
+                <div class="col-md-2-4">
+                    <div class="font-card">
+                        <div class="card-header">
+                            Pacifico
+                        </div>
+                        <div class="font-stage">
+                            <div class="font-example font-pacifico">Typography</div>
+                        </div>
+                        <div class="font-description">
+                            A fun, brush script font with a casual feel. Inspired by 1950s American surf culture, great
+                            for friendly branding.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Pairings Section -->
+    <section id="pairings" class="font-pairings">
+        <div class="container py-5 text-center">
+            <h2 class="section-title">Font Pairings</h2>
+            <p class="mb-5">Discover beautiful font combinations for your next design project</p>
+
+            <div class="row mt-5">
+                <!-- Font Pairing 1 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-playfair">Playfair Display</h3>
+                        <p class="pairing-body font-roboto">
+                            This classic serif font pairs wonderfully with Roboto for a timeless contrast between
+                            tradition and modernity. Perfect for editorial and luxury brands.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Font Pairing 2 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-poppins">Poppins</h3>
+                        <p class="pairing-body font-lora">
+                            The geometric sans-serif Poppins creates a beautiful contrast with the elegant serifs of
+                            Lora.
+                            This pairing works well for blogs and sophisticated websites.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Font Pairing 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-abril">Abril Fatface</h3>
+                        <p class="pairing-body font-montserrat">
+                            The bold, dramatic Abril Fatface creates a striking headline that pairs perfectly with the
+                            clean readability of Montserrat for body text.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Font Pairing 4 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-bebas">BEBAS NEUE</h3>
+                        <p class="pairing-body font-roboto">
+                            The condensed Bebas Neue makes for impactful headlines, while Roboto provides excellent
+                            readability for longer text. Great for modern, bold designs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Font Pairing 5 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-merriweather">Merriweather</h3>
+                        <p class="pairing-body font-montserrat">
+                            Merriweather's traditional serif style creates a pleasing contrast with Montserrat's
+                            geometric sans-serif design. Perfect for blogs and editorial content.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Font Pairing 6 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pairing-card">
+                        <h3 class="pairing-heading font-dancing">Dancing Script</h3>
+                        <p class="pairing-body font-poppins">
+                            The flowing script of Dancing Script adds personality as a display font, while Poppins
+                            provides clarity for body text. Perfect for wedding sites and personal blogs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">About Typography</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="about-text">
+                        Typography is more than just selecting fonts; it's an art form that combines readability,
+                        aesthetics, and emotion. Great typography enhances user experience, strengthens brand identity,
+                        and communicates the tone of your message. Our font showcase demonstrates how different
+                        typefaces
+                        can be paired to create engaging, dynamic designs for the web.
+                    </p>
+                    <div class="skills mt-5">
+                        <h3 class="mb-4">Typography Skills</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-font"></i>
+                                    <p>Font Selection</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <p>Typographic Hierarchy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-grip-lines"></i>
+                                    <p>Kerning & Tracking</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info mb-5">
+                        <p>Interested in typography solutions for your project? Let's collaborate!</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-behance fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-dribbble fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        &copy; 2025 Font Showcase. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script/font.js"></script>
+</body>
+
+</html>

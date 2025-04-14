@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Saya</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Script JS -->
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="audio/menu.ogg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <button id="music-btn" class="music-button">
+        <i class="fas fa-play"></i>
+    </button>        
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/valorant-logo-play-2-svgrepo-com.svg" alt="Valorant Logo">
+            </div>
+            <a class="navbar-brand fw-bold" href="#">ZSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+            <img src="images/profile.gif" class="profile-img rounded-circle shadow-lg mb-4" alt="Foto Profil">
+            <h1 class="mt-3 fw-bold">Zhidan Iannov Saaba</h1>
+            <p id="typing-text" class="lead mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores a modi possimus aspernatur est deserunt.</p>
+            <div class="hero-buttons mt-4">
+                <a href="#categories" class="btn btn-primary btn-lg">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-5">Categories</h2>
+            <div class="row g-4">
+                <!-- Video Category -->
+                <div class="col-md-4 mb-4">
+                    <a href="video.html" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>Video</h3>
+                            <div class="category-content">
+                                <video src="videos/Dolby Presents_ The World Of Sound _ Demo _ Dolby Atmos _ Dolby.mp4" class="img-fluid rounded shadow-sm" controls></video>
+                                <p class="mt-3">High quality video productions</p>
+                            </div>
+                            <div class="view-more">
+                                <span>View Gallery <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Audio Category -->
+                <div class="col-md-4 mb-4">
+                    <a href="audio.html" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h3>Audio</h3>
+                            <div class="category-content">
+                                <img src="images/p1.jpeg" class="img-fluid rounded shadow-sm" alt="Audio Category">
+                                <p class="mt-3">Professional audio production</p>
+                            </div>
+                            <div class="view-more">
+                                <span>View Gallery <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Image Category -->
+                <div class="col-md-4 mb-4">
+                    <a href="image.html" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h3>Image</h3>
+                            <div class="category-content">
+                                <img src="images/p2.jpeg" class="img-fluid rounded shadow-sm" alt="Image Category">
+                                <p class="mt-3">Creative visual designs</p>
+                            </div>
+                            <div class="view-more">
+                                <span>View Gallery <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Font Category -->
+                <div class="col-md-6 mb-4">
+                    <a href="font.html" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <h3>Font</h3>
+                            <div class="category-content">
+                                <div class="font-sample">
+                                    <p class="font-display">Aa Bb Cc Dd Ee Ff Gg Hh</p>
+                                    <p>Typography and font designs</p>
+                                </div>
+                            </div>
+                            <div class="view-more">
+                                <span>View Gallery <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Animation Category -->
+                <div class="col-md-6 mb-4">
+                    <a href="animate.html" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h3>Animation</h3>
+                            <div class="category-content">
+                                <div class="animation-sample">
+                                    <div class="animated-element"></div>
+                                    <p class="mt-3">Dynamic motion graphics</p>
+                                </div>
+                            </div>
+                            <div class="view-more">
+                                <span>View Gallery <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="about-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero numquam, assumenda officia fugit soluta, error illum incidunt provident praesentium, velit eligendi exercitationem! Ex, molestiae quos! Reprehenderit rerum consectetur aliquid minima. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam harum vel magni corrupti numquam voluptas quos suscipit quasi, doloremque, debitis maiores, soluta officia.
+                    </p>
+                    <div class="skills mt-5">
+                        <h3 class="mb-4">My Skills</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-video"></i>
+                                    <p>Video Editing</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-music"></i>
+                                    <p>Audio Production</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-image"></i>
+                                    <p>Graphic Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info mb-5">
+                        <p>Feel free to reach out for collaborations or inquiries</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        &copy; 2025 Zhidan Iannov Saaba. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll JS -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    event.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    window.scrollTo({
+                        top: target.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(30, 30, 30, 0.9) !important;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.logo img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+    color: #deb6a1 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #deb6a1;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+    color: #333;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.hero-buttons .btn {
+    background-color: #795548;
+    color: #f8ede3;
+    border: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+
+.hero-buttons .btn:hover {
+    background-color: #5d4037;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Font Gallery Section */
+.font-gallery {
+    background: #f8ede3;
+    padding: 80px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #deb6a1, #efc6b7);
+    bottom: -10px;
+    left: 25%;
+}
+
+/* Font Cards */
+.font-row {
+    margin-top: 40px;
+}
+
+.font-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.font-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: #efc6b7;
+    padding: 15px;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-stage {
+    position: relative;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.font-example {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+}
+
+.font-description {
+    padding: 15px;
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* Font Pairings Section */
+.font-pairings {
+    background: #f8ede3;
+    padding: 80px 0;
+}
+
+.pairing-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    padding: 30px;
+}
+
+.pairing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pairing-heading {
+    margin-bottom: 15px;
+}
+
+.pairing-body {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.skill-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+    color: #5d4037;
+}
+
+.skill-item i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #795548;
+}
+
+.skill-item:hover i {
+    color: #5d4037;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
+    color: #333;
+    padding: 80px 0;
+}
+
+.contact .section-title:after {
+    background: #5d4037;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(121, 85, 72, 0.2);
+    color: #5d4037;
+    margin: 0 15px 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #795548;
+    color: #f8ede3;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Music Button */
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #795548;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+.music-button.playing {
+    background: #a1887f;
+}
+
+/* Font-specific styles */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-lora {
+    font-family: 'Lora', serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-merriweather {
+    font-family: 'Merriweather', serif;
+}
+
+.font-abril {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-dancing {
+    font-family: 'Dancing Script', cursive;
+}
+
+.font-pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+/* Font weight variations */
+.weight-light {
+    font-weight: 300;
+}
+
+.weight-regular {
+    font-weight: 400;
+}
+
+.weight-bold {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .col-md-2-4 {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-md-2-4 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .col-md-2-4 {
+        width: 100%;
+    }
+
+    .font-card {
+        height: auto;
+    }
+}
+
+/* Custom column width for 5 columns */
+.col-md-2-4 {
+    width: 20%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
