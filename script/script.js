@@ -87,6 +87,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
 
+    // Make "View My Work" button functional
+    const exploreButton = document.querySelector('.hero-buttons .btn');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const categoriesSection = document.querySelector('#categories');
+            if (categoriesSection) {
+                window.scrollTo({
+                    top: categoriesSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
     // Smooth scrolling for all navigation links
     document.querySelectorAll('.nav-link, .btn').forEach(link => {
         link.addEventListener('click', function (event) {
