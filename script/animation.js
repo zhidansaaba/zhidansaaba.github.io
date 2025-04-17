@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("bg-music");
     const musicButton = document.getElementById("music-btn");
-    
+    const animationCards = document.querySelectorAll(".animation-card");
+    const columns = document.querySelectorAll(".animation-container-row .col");
+    const firstRowCols = document.querySelectorAll(".first-row");
+    const secondRowCols = document.querySelectorAll(".second-row");
+    const popup = document.getElementById('animationPopup');
+    const closeButton = document.querySelector('.popup-close');
+
     // Typing animation for hero text
     const textElement = document.getElementById("typing-text");
     const textContent = textElement.textContent;
@@ -19,6 +25,209 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start typing animation after a short delay
     setTimeout(typeWriter, 500);
 
+    // Add event listeners to animation cards
+    animationCards.forEach((card, index) => {
+        const isFirstRow = columns[index].classList.contains("first-row");
+
+        // Hover effect
+        card.addEventListener("mouseenter", function () {
+            // Add expanded class to current card
+            card.classList.add("expanded");
+            columns[index].classList.add("expanded");
+
+            // If card is in first row, only shrink other first row cards
+            if (isFirstRow) {
+                firstRowCols.forEach((col) => {
+                    if (!col.contains(card)) {
+                        col.classList.add("shrink-first-row");
+                    }
+                });
+            }
+            // If card is in second row, only shrink other second row cards
+            else {
+                secondRowCols.forEach((col) => {
+                    if (!col.contains(card)) {
+                        col.classList.add("shrink-second-row");
+                    }
+                });
+            }
+            
+            // Play video when hovering
+            const video = card.querySelector('video');
+            if (video) {
+                video.play().catch(e => {
+                    // Autoplay might be blocked, handle gracefully
+                    console.log("Video autoplay prevented:", e);
+                });
+            }
+        });
+
+        card.addEventListener("mouseleave", function () {
+            // Remove all expanded and shrink classes
+            animationCards.forEach(c => c.classList.remove("expanded"));
+            columns.forEach(col => {
+                col.classList.remove("expanded");
+                col.classList.remove("shrink-first-row");
+                col.classList.remove("shrink-second-row");
+            });
+            
+            // Pause video when not hovering
+            const video = card.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0; // Reset video to beginning
+            }
+        });
+
+        // Click event for popup
+        card.addEventListener("click", function() {
+            const video = card.querySelector('.animation-thumbnail');
+            const videoSource = card.querySelector('.animation-thumbnail source');
+            const title = card.querySelector('.card-title').textContent;
+            const format = card.querySelector('.animation-format').textContent;
+            
+            let videoSrc = "";
+            let posterSrc = "";
+            
+            if (video && videoSource) {
+                videoSrc = videoSource.src;
+                posterSrc = video.poster;
+            }
+            
+            // Get all details
+            let details = {};
+            const detailsDiv = card.querySelector('.animation-details');
+            
+            // Get example info
+            const exampleElem = detailsDiv.querySelector('p:nth-child(2)');
+            if (exampleElem) {
+                details.example = exampleElem.textContent;
+            }
+            
+            // Get studio info
+            const studioElem = detailsDiv.querySelector('p:nth-child(3)');
+            if (studioElem) {
+                details.studio = studioElem.textContent;
+            }
+            
+            // Get description
+            const descriptionElem = detailsDiv.querySelector('.animation-description p');
+            if (descriptionElem) {
+                details.description = descriptionElem.textContent;
+            }
+            
+            // Open popup with this info
+            openAnimationPopup(videoSrc, posterSrc, title, format, details);
+        });
+    });
+
+    // Function to open popup
+    function openAnimationPopup(videoSrc, posterSrc, title, format, details) {
+        const popupImage = document.getElementById('popupImage');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupFormat = document.getElementById('popupFormat');
+        const detailsList = document.getElementById('popupDetailsList');
+        const popupDescription = document.getElementById('popupDescription');
+        
+        // Set content
+        popupTitle.textContent = title;
+        popupFormat.textContent = format;
+        
+        // Clear previous details
+        detailsList.innerHTML = '';
+        
+        // Add details
+        if (details.example) {
+            const exampleEl = document.createElement('p');
+            exampleEl.innerHTML = details.example;
+            detailsList.appendChild(exampleEl);
+        }
+        
+        if (details.studio) {
+            const studioEl = document.createElement('p');
+            studioEl.innerHTML = details.studio;
+            detailsList.appendChild(studioEl);
+        }
+        
+        // Description
+        popupDescription.textContent = details.description || '';
+        
+        // Handle video in popup
+        if (popupImage.tagName === 'IMG') {
+            // Create a video element to replace the image
+            const videoElement = document.createElement('video');
+            videoElement.id = 'popupImage';
+            videoElement.className = 'popup-image';
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            videoElement.poster = posterSrc;
+            
+            const sourceElement = document.createElement('source');
+            sourceElement.src = videoSrc;
+            sourceElement.type = 'video/mp4';
+            
+            videoElement.appendChild(sourceElement);
+            
+            // Replace the image with the video
+            popupImage.parentNode.replaceChild(videoElement, popupImage);
+        } else {
+            // It's already a video element
+            const source = popupImage.querySelector('source') || document.createElement('source');
+            source.src = videoSrc;
+            source.type = 'video/mp4';
+            
+            if (!popupImage.contains(source)) {
+                popupImage.appendChild(source);
+            }
+            
+            popupImage.poster = posterSrc;
+            popupImage.load(); // Reload the video with new source
+            
+            try {
+                popupImage.play();
+            } catch (e) {
+                console.log("Could not autoplay video in popup:", e);
+            }
+        }
+        
+        // Show popup
+        popup.classList.add('active');
+        
+        // Prevent body scrolling when popup is open
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close popup
+    function closeAnimationPopup() {
+        popup.classList.remove('active');
+        
+        // Stop video playback when closing popup
+        const popupVideo = document.getElementById('popupImage');
+        if (popupVideo && popupVideo.tagName === 'VIDEO') {
+            popupVideo.pause();
+        }
+        
+        // Re-enable body scrolling
+        document.body.style.overflow = '';
+    }
+
+    // Close popup when clicking close button
+    closeButton.addEventListener('click', closeAnimationPopup);
+    
+    // Close popup when clicking outside
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            closeAnimationPopup();
+        }
+    });
+    
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeAnimationPopup();
+        }
+    });
+
     // Background Music Control
     musicButton.addEventListener("click", function () {
         if (audio.paused) {
@@ -34,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -48,221 +257,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute('href').startsWith('#')) {
                 event.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                window.scrollTo({
-                    top: target.offsetTop - 60,
-                    behavior: 'smooth'
-                });
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
-    });
-    
-    // CHARACTER ANIMATION
-    // Running animation
-    const runningAnimation = anime({
-        targets: '#character',
-        translateX: {
-            value: '+=5',
-            duration: 100,
-            easing: 'easeInOutSine',
-            direction: 'alternate'
-        },
-        translateY: {
-            value: '-=2',
-            duration: 100,
-            easing: 'easeInOutQuad',
-            direction: 'alternate'
-        },
-        loop: true,
-        autoplay: false
-    });
-    
-    // Arm and leg animation
-    const limbAnimation = anime({
-        targets: [
-            '#character .character-arm-left',
-            '#character .character-arm-right',
-            '#character .character-leg-left',
-            '#character .character-leg-right'
-        ],
-        rotate: function(el, i) {
-            // Alternate rotation for limbs
-            const angles = [30, -30, 30, -30];
-            return [angles[i], -angles[i]];
-        },
-        duration: 200,
-        easing: 'easeInOutSine',
-        direction: 'alternate',
-        loop: true,
-        autoplay: false
-    });
-    
-    // Obstacle animation
-    const obstacleAnimation = anime({
-        targets: '#obstacle',
-        translateX: {
-            value: -1000,
-            duration: 3000,
-            easing: 'linear'
-        },
-        loop: true,
-        autoplay: false
-    });
-    
-    // Jump animation
-    function jumpAnimation() {
-        anime({
-            targets: '#character',
-            translateY: [
-                { value: -100, duration: 500, easing: 'easeOutQuad' },
-                { value: 0, duration: 500, easing: 'easeInQuad' }
-            ],
-            complete: function() {
-                setTimeout(jumpAnimation, 5000); // Jump again after 5 seconds
-            }
-        });
-        
-        // Synchronize arm and leg positions during jump
-        anime({
-            targets: '#character .character-arm-left',
-            rotate: [
-                { value: -70, duration: 500 },
-                { value: 30, duration: 500 }
-            ],
-            easing: 'easeInOutSine'
-        });
-        
-        anime({
-            targets: '#character .character-arm-right',
-            rotate: [
-                { value: -70, duration: 500 },
-                { value: 30, duration: 500 }
-            ],
-            easing: 'easeInOutSine'
-        });
-        
-        anime({
-            targets: '#character .character-leg-left',
-            rotate: [
-                { value: -30, duration: 500 },
-                { value: 30, duration: 500 }
-            ],
-            easing: 'easeInOutSine'
-        });
-        
-        anime({
-            targets: '#character .character-leg-right',
-            rotate: [
-                { value: 30, duration: 500 },
-                { value: -30, duration: 500 }
-            ],
-            easing: 'easeInOutSine'
-        });
-    }
-    
-    // Start character animations
-    runningAnimation.play();
-    limbAnimation.play();
-    obstacleAnimation.play();
-    
-    // Trigger jump animation after 2 seconds
-    setTimeout(jumpAnimation, 2000);
-    
-    // BASIC ANIMATIONS
-    
-    // Fade Animation
-    anime({
-        targets: '#fade-animation .animation-element',
-        opacity: [1, 0.2, 1],
-        duration: 2000,
-        loop: true,
-        easing: 'easeInOutSine',
-        autoplay: true
-    });
-    
-    // Scale Animation
-    anime({
-        targets: '#scale-animation .animation-element',
-        scale: [1, 1.5, 0.8, 1],
-        duration: 2500,
-        loop: true,
-        easing: 'easeInOutExpo',
-        autoplay: true
-    });
-    
-    // Rotate Animation
-    anime({
-        targets: '#rotate-animation .animation-element',
-        rotate: '1turn',
-        duration: 2000,
-        loop: true,
-        easing: 'easeInOutQuad',
-        autoplay: true
-    });
-    
-    // ADVANCED ANIMATIONS
-    
-    // Path Animation
-    anime({
-        targets: '#path-animation .animation-element',
-        keyframes: [
-            {translateX: 80, translateY: -40, duration: 1000},
-            {translateX: 0, translateY: 40, duration: 1000},
-            {translateX: -80, translateY: -40, duration: 1000},
-            {translateX: 0, translateY: 0, duration: 1000}
-        ],
-        easing: 'easeOutElastic(1, .6)',
-        loop: true,
-        autoplay: true
-    });
-    
-    // Elastic Animation
-    anime({
-        targets: '#elastic-animation .animation-element',
-        translateX: [
-            {value: 80, duration: 1000, elasticity: 600},
-            {value: -80, duration: 1000, elasticity: 600},
-            {value: 0, duration: 1000, elasticity: 600}
-        ],
-        scaleX: [
-            {value: 1.5, duration: 1000, delay: 0},
-            {value: 0.75, duration: 1000, delay: 1000},
-            {value: 1, duration: 1000, delay: 2000}
-        ],
-        loop: true,
-        autoplay: true
-    });
-    
-    // Color Animation
-    anime({
-        targets: '#color-animation .animation-element',
-        backgroundColor: [
-            '#795548',
-            '#deb6a1',
-            '#a1887f',
-            '#8d6e63',
-            '#795548'
-        ],
-        duration: 4000,
-        easing: 'easeInOutQuad',
-        loop: true,
-        autoplay: true
-    });
-    
-    // TEXT ANIMATION
-    // Split text into characters for animation
-    const text = document.querySelector('#animated-text');
-    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-    
-    // Animate each character
-    anime({
-        targets: '#animated-text span',
-        translateY: [-20, 0],
-        opacity: [0, 1],
-        easing: 'easeOutExpo',
-        duration: 1500,
-        delay: (el, i) => 80 * i,
-        loop: true,
-        direction: 'alternate',
-        autoplay: true
     });
 });

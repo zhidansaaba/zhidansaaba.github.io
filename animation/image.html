@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="stylesheet" href="css/image.css">
+</head>
+
+<body>
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+        <source src="audio/menu.ogg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-btn" class="music-button">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/valorant-logo-play-2-svgrepo-com.svg" alt="Gallery Logo">
+            </div>
+            <a class="navbar-brand fw-bold" href="#">ZSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+            <h1 class="mt-3 fw-bold">Image Collection</h1>
+            <p id="typing-text" class="lead mt-3">Explore our collection of images in various formats</p>
+            <div class="hero-buttons mt-4">
+                <a href="#gallery" class="btn btn-primary btn-lg">Explore Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="image-gallery">
+        <div class="container py-5">
+            <h2 class="section-title mb-5">Image Gallery</h2>
+            <div class="row row-cols-5 image-container-row">
+                <!-- Image Card 1 - JPEG -->
+                <div class="col first-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format JPEG</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.jpeg" alt="Coastal Sunrise" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Kreator:</strong> Tim Digital Art</p>
+                            <p><strong>Dibuat:</strong> Januari 2025</p>
+                            <div class="image-description">
+                                <p>Format JPEG menggunakan kompresi lossy yang mengurangi ukuran file dengan mengorbankan sedikit kualitas. Setelah dikonversi dari PNG, gambar kehilangan transparansi dan detail halus, tetapi lebih kecil dan cocok untuk web.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 2 - PNG -->
+                <div class="col first-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format PNG</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.png" alt="Brand Logo" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Desainer:</strong> Studio Digital</p>
+                            <p><strong>Dibuat:</strong> Desember 2024</p>
+                            <div class="image-description">
+                                <p>Format PNG menggunakan kompresi lossless yang mempertahankan kualitas gambar. Setelah dikonversi dari APNG, gambar kehilangan animasi tetapi mempertahankan transparansi dan kedalaman warna 24-bit yang sempurna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 3 - GIF -->
+                <div class="col first-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format GIF</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spiderman.gif" alt="Loading Animation" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Animator:</strong> Tim Animasi Web</p>
+                            <p><strong>Jumlah Frame:</strong> 24 frame</p>
+                            <div class="image-description">
+                                <p>Format GIF mendukung animasi sederhana dan kompatibilitas universal. Setelah dikonversi dari PNG, gambar mendapatkan kemampuan animasi tetapi terbatas pada 256 warna, menghasilkan kualitas warna yang lebih rendah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 4 - SVG -->
+                <div class="col first-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format SVG</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.svg" alt="Spiderman"
+                                class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Ilustrator:</strong> Tim Vektor</p>
+                            <p><strong>Skalabilitas:</strong> Tak terbatas</p>
+                            <div class="image-description">
+                                <p>Format SVG menyimpan gambar sebagai grafik vektor berbasis XML. Setelah dikonversi dari PNG, gambar menjadi scalable tanpa batas, cocok untuk semua ukuran layar, dan ukuran filenya jauh lebih kecil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 5 - WEBP -->
+                <div class="col first-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format WEBP</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.webp" alt="Mountain Landscape" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Pengembang:</strong> Tim Optimasi Web</p>
+                            <p><strong>Kompresi:</strong> 30% lebih kecil dari JPEG</p>
+                            <div class="image-description">
+                                <p>Format WebP menawarkan kompresi superior dengan dukungan lossy dan lossless. Setelah dikonversi dari PNG, ukuran file berkurang hingga 30% dengan kualitas visual tetap baik, ideal untuk web modern.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 6 - RAW -->
+                <div class="col second-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format CUR</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.cur" alt="Spiderman" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Desainer UI:</strong> Tim Sistem</p>
+                            <p><strong>Ukuran Standar:</strong> 32x32 piksel</p>
+                            <div class="image-description">
+                                <p>Format CUR dikhususkan untuk kursor komputer. Setelah dikonversi dari PNG, gambar menjadi lebih kecil dengan ukuran terbatas, biasanya 32x32 piksel, tetapi mempertahankan transparansi untuk kursor kustom Windows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 7 - ICO -->
+                <div class="col second-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format ICO</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.ico" alt="Studio Product Shot" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Desainer Web:</strong> Tim Pengembangan</p>
+                            <p><strong>Ukuran:</strong> Multi-resolusi</p>
+                            <div class="image-description">
+                                <p>Format ICO didesain untuk ikon Windows dan favicon website. Setelah dikonversi dari PNG, gambar menjadi container yang dapat menyimpan beberapa ukuran (16x16, 32x32, 48x48) dalam satu file dengan transparansi.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 8 - BMP -->
+                <div class="col second-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format BMP</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.bmp" alt="Digital Artwork" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Programer:</strong> Tim Sistem</p>
+                            <p><strong>Kompresi:</strong> Tanpa kompresi</p>
+                            <div class="image-description">
+                                <p>Format BMP (Bitmap) menyimpan data piksel tanpa kompresi. Setelah dikonversi dari PNG, ukuran file meningkat signifikan karena tidak ada kompresi, tetapi mempertahankan kualitas warna sempurna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 9 - HEIF/HEIC -->
+                <div class="col second-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format HEIF/HEIC</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spdrmn.heic" alt="Urban Photography" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Pengembang Mobile:</strong> Tim Apple</p>
+                            <p><strong>Efisiensi:</strong> 50% lebih kecil dari JPEG</p>
+                            <div class="image-description">
+                                <p>Format HEIF/HEIC menawarkan kompresi dua kali lebih efisien dari JPEG. Setelah dikonversi dari PNG, ukuran file berkurang 50% dengan kualitas visual lebih baik, mendukung warna 10-bit, ideal untuk perangkat Apple.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 10 - APNG -->
+                <div class="col second-row">
+                    <div class="image-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Spiderman</h5>
+                            <div class="image-format">Format APNG</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/Spiderman.png" alt="Food Photography" class="image-thumbnail">
+                        </div>
+                        <div class="image-details">
+                            <h5>Spiderman</h5>
+                            <p><strong>Animator Web:</strong> Tim Interaktif</p>
+                            <p><strong>Kedalaman Warna:</strong> 24-bit</p>
+                            <div class="image-description">
+                                <p>Format APNG (Animated PNG) mendukung animasi dengan kualitas PNG. Setelah dikonversi dari GIF, animasi memiliki warna lebih kaya (24-bit) dan transparansi penuh, tetapi dengan ukuran file lebih besar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">About Image Gallery</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="about-text">
+                        Our image gallery showcases a diverse range of image formats and visual styles. From
+                        common web formats like JPEG and PNG to professional formats such as RAW and TIFF, we're
+                        dedicated to
+                        demonstrating the nuances and characteristics of each format. Every image in our collection is
+                        carefully
+                        selected to highlight the strengths of its respective format and showcase various photography
+                        and design techniques.
+                    </p>
+                    <div class="skills mt-5">
+                        <h3 class="mb-4">Imaging Expertise</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-camera"></i>
+                                    <p>Photography</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <p>Digital Art</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="skill-item">
+                                    <i class="fas fa-crop"></i>
+                                    <p>Image Editing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container py-5">
+            <h2 class="section-title mb-4">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info mb-5">
+                        <p>Feel free to reach out for collaborations or inquiries about photography and image design</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        &copy; 2025 Zhidan Iannov Saaba. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script/image.js"></script>
+</body>
+
+</html>
