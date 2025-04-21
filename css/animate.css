@@ -1,8 +1,8 @@
 /* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #f5f5f5;
-    color: #333;
+    background: #F5EEDC; /* Light cream background */
+    color: #183B4E; /* Dark teal text */
     /* removed overflow-x: hidden; to allow scrolling */
 }
 
@@ -36,11 +36,9 @@ body::-webkit-scrollbar {
     /* Chrome, Safari, Opera */
 }
 
-
-
 /* Navbar */
 .navbar {
-    background: rgba(33, 33, 33, 0.95) !important;
+    background: rgba(24, 59, 78, 0.95) !important; /* Dark teal with transparency */
     padding: 15px 0;
     transition: all 0.3s ease;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -62,7 +60,7 @@ body::-webkit-scrollbar {
 .navbar-brand {
     font-weight: 700;
     font-size: 24px;
-    color: #ff4655 !important;
+    color: #DDA853 !important; /* Golden color */
 }
 
 .nav-link {
@@ -70,6 +68,7 @@ body::-webkit-scrollbar {
     margin: 0 10px;
     position: relative;
     transition: color 0.3s;
+    color: #F5EEDC; /* Light cream text */
 }
 
 .nav-link::after {
@@ -77,7 +76,7 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #ff4655;
+    background-color: #DDA853; /* Golden color */
     bottom: 0;
     left: 0;
     transition: width 0.3s;
@@ -87,10 +86,10 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
-/* Hero Section - Animation Theme - Changed colors to match image.css */
+/* Hero Section - Animation Theme */
 .hero {
-    background: linear-gradient(135deg, #deb6a1 0%, #efc6b7 100%);
-    color: #333;
+    background: linear-gradient(135deg, #27548A 0%, #183B4E 100%); /* Blue to dark teal gradient */
+    color: #F5EEDC; /* Light cream text */
     height: 100vh;
     position: relative;
     /* removed overflow: hidden; to allow scrolling */
@@ -121,22 +120,22 @@ body::-webkit-scrollbar {
 }
 
 .hero-buttons .btn {
-    background-color: #795548;
-    color: #f8ede3;
+    background-color: #DDA853; /* Golden color */
+    color: #183B4E; /* Dark teal text */
     border: none;
     transition: all 0.3s ease;
 }
 
 .hero-buttons .btn:hover {
-    background-color: #5d4037;
+    background-color: #F5EEDC; /* Light cream on hover */
     transform: translateY(-2px);
 }
 
-/* Animation Gallery - Changed colors to match image.css */
+/* Animation Gallery */
 .animation-gallery {
-    background: #f8ede3;
+    background: #F5EEDC; /* Light cream background */
     padding: 40px 0;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
 }
 
 .row-cols-5>* {
@@ -146,7 +145,7 @@ body::-webkit-scrollbar {
     padding: 0 10px;
 }
 
-/* Animation Card Styling - Changed colors to match image.css */
+/* Animation Card Styling */
 .animation-card {
     position: relative;
     margin-bottom: 30px;
@@ -154,7 +153,7 @@ body::-webkit-scrollbar {
     /* keeping overflow: hidden; for the card only to maintain rounded corners and contain content */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #efc6b7;
+    background-color: #DDA853; /* Golden background */
     height: 300px;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
@@ -162,25 +161,25 @@ body::-webkit-scrollbar {
 
 .card-header {
     padding: 15px;
-    background-color: #efc6b7;
+    background-color: #DDA853; /* Golden background */
 }
 
 .card-title {
     font-weight: 600;
     margin-bottom: 5px;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
 }
 
 .animation-format {
     font-size: 0.85rem;
-    color: #666;
+    color: #183B4E; /* Dark teal text */
 }
 
 .animation-container {
     position: relative;
     width: 100%;
     height: calc(100% - 70px);
-    background-color: #deb6a1;
+    background-color: #27548A; /* Blue background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,10 +194,11 @@ body::-webkit-scrollbar {
     object-fit: cover;
     margin-bottom: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(245, 238, 220, 0.3); /* Light cream with transparency */
     transition: transform 0.3s ease;
     cursor: pointer;
 }
+
 .animation-card:hover .animation-thumbnail {
     transform: scale(1.05);
 }
@@ -216,14 +216,14 @@ body::-webkit-scrollbar {
     opacity: 0.7;
 }
 
-/* Animation Details Hidden section - Changed colors to match image.css */
+/* Animation Details Hidden section */
 .animation-details {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(222, 182, 161, 0.95);
+    background-color: rgba(39, 84, 138, 0.95); /* Blue with transparency */
     padding: 20px;
     transform: translateY(100%);
     transition: transform 0.5s ease;
@@ -240,7 +240,7 @@ body::-webkit-scrollbar {
 
 .animation-details h5 {
     font-weight: 700;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
     margin-bottom: 15px;
     font-size: 1.4rem;
 }
@@ -248,28 +248,28 @@ body::-webkit-scrollbar {
 .animation-details p {
     font-size: 0.9rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
 }
 
 .animation-details strong {
-    color: #ff4655;
+    color: #DDA853; /* Golden color */
 }
 
 .animation-description {
     margin-top: 15px;
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
 }
 
-/* Animation Popup - Changed colors to match image.css */
+/* Animation Popup */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(24, 59, 78, 0.8); /* Dark teal with transparency */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,7 +285,7 @@ body::-webkit-scrollbar {
 }
 
 .popup-content {
-    background-color: #f8ede3;
+    background-color: #F5EEDC; /* Light cream background */
     width: 80%;
     max-width: 900px;
     border-radius: 12px;
@@ -303,15 +303,15 @@ body::-webkit-scrollbar {
 
 .popup-header {
     padding: 20px;
-    background-color: #efc6b7;
+    background-color: #DDA853; /* Golden background */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #deb6a1;
+    border-bottom: 2px solid #27548A; /* Blue border */
 }
 
 .popup-title {
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     font-weight: 700;
     font-size: 1.8rem;
     margin: 0;
@@ -320,14 +320,14 @@ body::-webkit-scrollbar {
 .popup-close {
     background: none;
     border: none;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     font-size: 2rem;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .popup-close:hover {
-    color: #ff4655;
+    color: #27548A; /* Blue on hover */
     transform: rotate(90deg);
 }
 
@@ -347,12 +347,12 @@ body::-webkit-scrollbar {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 4px solid rgba(255, 255, 255, 0.1);
+    border: 4px solid rgba(221, 168, 83, 0.1); /* Golden with transparency */
 }
 
 .popup-details {
     flex: 0 0 60%;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     /* Add scrolling for this container if needed */
     max-height: 60vh;
     overflow-y: auto;
@@ -360,8 +360,8 @@ body::-webkit-scrollbar {
 
 .popup-format {
     display: inline-block;
-    background-color: #ff4655;
-    color: #fff;
+    background-color: #27548A; /* Blue background */
+    color: #F5EEDC; /* Light cream text */
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -369,7 +369,7 @@ body::-webkit-scrollbar {
 }
 
 .popup-details h3 {
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     font-size: 1.4rem;
     margin: 20px 0 15px;
     font-weight: 600;
@@ -390,7 +390,7 @@ body::-webkit-scrollbar {
 /* Section Titles */
 .section-title {
     position: relative;
-    color: #ff4655;
+    color: #27548A; /* Blue text */
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
@@ -402,7 +402,7 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 80px;
     height: 3px;
-    background-color: #ff4655;
+    background-color: #DDA853; /* Golden underline */
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -410,19 +410,19 @@ body::-webkit-scrollbar {
 
 /* About Section */
 .about {
-    background-color: #f9f9f9;
+    background-color: #F5EEDC; /* Light cream background */
     padding: 80px 0;
 }
 
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     margin-bottom: 30px;
 }
 
 .skills h3 {
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     font-weight: 600;
 }
 
@@ -441,7 +441,7 @@ body::-webkit-scrollbar {
 }
 
 .skill-item i {
-    color: #ff4655;
+    color: #27548A; /* Blue icon */
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
@@ -449,13 +449,13 @@ body::-webkit-scrollbar {
 .skill-item p {
     font-weight: 600;
     margin: 0;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
 }
 
 /* Contact Section */
 .contact {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #F5EEDC; /* Light cream background */
+    color: #183B4E; /* Dark teal text */
     padding: 80px 0;
 }
 
@@ -474,20 +474,20 @@ body::-webkit-scrollbar {
 .social-icon {
     display: inline-block;
     margin: 0 15px;
-    color: #333;
+    color: #183B4E; /* Dark teal text */
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #ff4655;
+    color: #27548A; /* Blue on hover */
     transform: translateY(-5px);
 }
 
 /* Footer */
 footer {
-    background-color: #1a252f !important;
+    background-color: #183B4E !important; /* Dark teal background */
     padding: 15px 0;
-    color: #bdc3c7;
+    color: #F5EEDC; /* Light cream text */
     font-size: 0.9rem;
 }
 
@@ -499,8 +499,8 @@ footer {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #ff4655;
-    color: #fff;
+    background-color: #DDA853; /* Golden background */
+    color: #183B4E; /* Dark teal text */
     border: none;
     display: flex;
     align-items: center;
@@ -513,7 +513,8 @@ footer {
 }
 
 .music-button:hover {
-    background-color: #e53945;
+    background-color: #27548A; /* Blue on hover */
+    color: #F5EEDC; /* Light cream text */
     transform: scale(1.1);
 }
 
@@ -523,15 +524,15 @@ footer {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.7);
+        box-shadow: 0 0 0 0 rgba(221, 168, 83, 0.7); /* Golden with transparency */
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(255, 70, 85, 0);
+        box-shadow: 0 0 0 10px rgba(221, 168, 83, 0); /* Golden fully transparent */
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(255, 70, 85, 0);
+        box-shadow: 0 0 0 0 rgba(221, 168, 83, 0); /* Golden fully transparent */
     }
 }
 
@@ -542,7 +543,6 @@ footer {
 }
 
 @keyframes blink {
-
     0%,
     100% {
         opacity: 1;

@@ -1,6 +1,6 @@
 /* Audio Gallery Specific Styles */
 .audio-gallery {
-    background: #f8ede3;
+    background: #F5EEDC; /* Light cream background */
     padding: 40px 0;
 }
 
@@ -18,7 +18,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #efc6b7;
+    background-color: #DDA853; /* Golden background */
     height: 300px;
     /* Fixed height */
     transition: all 0.5s ease-in-out;
@@ -27,7 +27,7 @@
 
 .card-header {
     padding: 10px;
-    background-color: #efc6b7;
+    background-color: #DDA853; /* Golden background */
 }
 
 .card-title {
@@ -37,7 +37,7 @@
 
 .audio-format {
     font-size: 0.85rem;
-    color: #666;
+    color: #183B4E; /* Dark teal for text */
 }
 
 .audio-player {
@@ -45,7 +45,7 @@
     width: 100%;
     height: calc(100% - 70px);
     /* Subtract header height */
-    background-color: #deb6a1;
+    background-color: #27548A; /* Blue background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +67,7 @@
 }
 
 .play-pause-btn {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(245, 238, 220, 0.3); /* Light cream with transparency */
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -77,13 +77,13 @@
     justify-content: center;
     margin-bottom: 10px;
     cursor: pointer;
-    color: #333;
+    color: #F5EEDC; /* Light cream color */
 }
 
 .progress-container {
     width: 100%;
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(245, 238, 220, 0.4); /* Light cream with transparency */
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -92,7 +92,7 @@
 .progress-bar {
     height: 100%;
     width: 0%;
-    background-color: #f8ede3;
+    background-color: #DDA853; /* Golden color for progress bar */
     border-radius: 4px;
     transition: width 0.1s linear;
 }
@@ -106,7 +106,7 @@
     object-fit: cover;
     margin-bottom: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(245, 238, 220, 0.3); /* Light cream border with transparency */
     transition: transform 0.3s ease;
 }
 
@@ -156,7 +156,7 @@
     width: 50%;
     height: 100%;
     padding: 20px;
-    background-color: #deb6a1;
+    background-color: #183B4E; /* Dark teal background */
     overflow-y: auto;
     scrollbar-width: none;
     /* Firefox */
@@ -176,19 +176,19 @@
 .audio-details h5 {
     margin-bottom: 15px;
     font-weight: 600;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
 }
 
 .audio-details p {
     margin-bottom: 10px;
     font-size: 0.9rem;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
 }
 
 .audio-description {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: #333;
+    color: #F5EEDC; /* Light cream text */
     padding-bottom: 10px;
     /* Add padding at bottom for scrolling content */
 }

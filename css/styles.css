@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    color: #333;
+    color: #183B4E;
 }
 
 body::-webkit-scrollbar {
@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 50px;
     height: 3px;
-    background-color: #ff7f50;
+    background-color: #DDA853;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
 
 /* Navbar */
 .navbar {
-    background: rgba(33, 33, 33, 0.95) !important;
+    background: rgba(24, 59, 78, 0.95) !important;
     padding: 15px 0;
     transition: all 0.3s ease;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
 .navbar-brand {
     font-weight: 700;
     font-size: 24px;
-    color: #ffffff !important;
+    color: #F5EEDC !important;
 }
 
 .nav-link {
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #ff7f50;
+    background-color: #DDA853;
     bottom: 0;
     left: 0;
     transition: width 0.3s;
@@ -93,7 +93,7 @@ body::-webkit-scrollbar {
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #ff7f50;
+    background-color: #DDA853;
     color: white;
     border: none;
     border-radius: 50%;
@@ -112,15 +112,15 @@ body::-webkit-scrollbar {
 }
 
 .music-button.playing {
-    background-color: white;
-    color: #ff7f50;
-    border: 2px solid #ff7f50;
+    background-color: #F5EEDC;
+    color: #DDA853;
+    border: 2px solid #DDA853;
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #f8ede3 0%, #eddcd2 100%);
+    background: linear-gradient(135deg, #F5EEDC 0%, #F5EEDC 100%);
     padding-top: 80px;
     position: relative;
     overflow: hidden;
@@ -133,7 +133,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,127,80,0.1)" stroke-width="1"/></svg>');
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(221,168,83,0.1)" stroke-width="1"/></svg>');
     background-size: 100px 100px;
     opacity: 0.3;
 }
@@ -155,28 +155,29 @@ body::-webkit-scrollbar {
     font-size: 20px;
     max-width: 700px;
     margin: 0 auto;
-    color: #555;
+    color: #183B4E;
 }
 
 .hero-buttons .btn {
-    background-color: #ff7f50;
+    background-color: #DDA853;
     border: none;
     padding: 12px 30px;
     font-weight: 600;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
+    box-shadow: 0 5px 15px rgba(221, 168, 83, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .hero-buttons .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 127, 80, 0.5);
-    background-color: #ff6b3d;
+    box-shadow: 0 8px 20px rgba(221, 168, 83, 0.5);
+    background-color: #27548A;
+    color: #F5EEDC;
 }
 
 /* Categories Section */
 .categories {
-    background: linear-gradient(135deg, #efc6b7 0%, #f2d0a9 100%);
+    background: linear-gradient(135deg, #F5EEDC 0%, #F5EEDC 100%);
     padding: 80px 0;
 }
 
@@ -210,7 +211,7 @@ body::-webkit-scrollbar {
 
 .category-icon {
     font-size: 40px;
-    color: #ff7f50;
+    color: #27548A;
     margin-bottom: 20px;
     transition: transform 0.3s;
 }
@@ -233,7 +234,7 @@ body::-webkit-scrollbar {
     position: absolute;
     width: 30px;
     height: 2px;
-    background-color: #ff7f50;
+    background-color: #DDA853;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -241,7 +242,7 @@ body::-webkit-scrollbar {
 }
 
 .category-link:hover h3 {
-    color: #ff7f50;
+    color: #27548A;
 }
 
 .category-link:hover h3::after {
@@ -269,7 +270,7 @@ body::-webkit-scrollbar {
     padding-top: 15px;
     border-top: 1px solid #eee;
     font-weight: 600;
-    color: #ff7f50;
+    color: #27548A;
     transition: all 0.3s;
     display: flex;
     justify-content: center;
@@ -287,7 +288,7 @@ body::-webkit-scrollbar {
 
 /* Font Display */
 .font-sample {
-    background-color: #f9f9f9;
+    background-color: #F5EEDC;
     border-radius: 10px;
     padding: 20px;
 }
@@ -296,12 +297,12 @@ body::-webkit-scrollbar {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #333;
+    color: #183B4E;
 }
 
 /* Animation Sample */
 .animation-sample {
-    background-color: #f9f9f9;
+    background-color: #F5EEDC;
     border-radius: 10px;
     padding: 20px;
     position: relative;
@@ -312,7 +313,7 @@ body::-webkit-scrollbar {
 .animated-element {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #ff7f50, #ff5252);
+    background: linear-gradient(135deg, #DDA853, #27548A);
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -325,7 +326,7 @@ body::-webkit-scrollbar {
 
 /* PDF Category */
 .pdf-preview {
-    background-color: #f9f9f9;
+    background-color: #F5EEDC;
     border-radius: 10px;
     padding: 20px;
     position: relative;
@@ -375,7 +376,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 127, 80, 0.8);
+    background: rgba(39, 84, 138, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -394,7 +395,7 @@ body::-webkit-scrollbar {
 
 .pdf-btn {
     background-color: white;
-    color: #ff7f50;
+    color: #27548A;
     border: none;
     border-radius: 30px;
     padding: 8px 15px;
@@ -403,7 +404,7 @@ body::-webkit-scrollbar {
 }
 
 .pdf-btn:hover {
-    background-color: #333;
+    background-color: #183B4E;
     color: white;
     transform: scale(1.05);
 }
@@ -412,34 +413,34 @@ body::-webkit-scrollbar {
     0% {
         left: 0;
         transform: translateY(-50%) scale(1);
-        background: linear-gradient(135deg, #ff7f50, #ff5252);
+        background: linear-gradient(135deg, #DDA853, #27548A);
         border-radius: 50%;
     }
 
     50% {
         transform: translateY(-50%) scale(1.5);
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        background: linear-gradient(135deg, #27548A, #183B4E);
         border-radius: 10px;
     }
 
     100% {
         left: calc(100% - 50px);
         transform: translateY(-50%) scale(1);
-        background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+        background: linear-gradient(135deg, #183B4E, #F5EEDC);
         border-radius: 50%;
     }
 }
 
 /* About Section */
 .about {
-    background: linear-gradient(135deg, #f7d9c4 0%, #f9e9df 100%);
+    background: linear-gradient(135deg, #F5EEDC 0%, #F5EEDC 100%);
     padding: 80px 0;
 }
 
 .about-text {
     font-size: 16px;
     line-height: 1.8;
-    color: #555;
+    color: #183B4E;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -462,7 +463,7 @@ body::-webkit-scrollbar {
 
 .skill-item i {
     font-size: 30px;
-    color: #ff7f50;
+    color: #27548A;
     margin-bottom: 15px;
 }
 
@@ -473,7 +474,7 @@ body::-webkit-scrollbar {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(135deg, #deb6a1 0%, #e6ccb2 100%);
+    background: linear-gradient(135deg, #F5EEDC 0%, #F5EEDC 100%);
     padding: 80px 0;
 }
 
@@ -497,20 +498,20 @@ body::-webkit-scrollbar {
     height: 60px;
     border-radius: 50%;
     background-color: white;
-    color: #555;
+    color: #183B4E;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background-color: #ff7f50;
+    background-color: #DDA853;
     color: white;
     transform: translateY(-5px);
 }
 
 /* Footer */
 footer {
-    background-color: #333 !important;
+    background-color: #183B4E !important;
     color: white;
     padding: 20px 0;
 }
